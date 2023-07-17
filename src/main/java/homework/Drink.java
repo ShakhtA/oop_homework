@@ -1,9 +1,9 @@
 package homework;
 
 public class Drink {
-    private String name;
-    private int volume;
-    private int price;
+    protected String name;
+    protected int volume;
+    protected int price;
 
     public Drink() {
         this("Undefined", 200, 0);
