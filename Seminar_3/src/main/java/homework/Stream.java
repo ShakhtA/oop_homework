@@ -50,13 +50,4 @@ public class Stream {
     public void remove (LearnGroup learnGroup) {
         learnGroupList.remove(learnGroup);
     }
-
-    public void showGroup() {
-        System.out.println("Stream " + name);
-        System.out.println("Groups:");
-        if (!learnGroupList.isEmpty()){
-
-
-        } else System.out.printf("Поток %s пуст.\n", name);
-    }
 }
