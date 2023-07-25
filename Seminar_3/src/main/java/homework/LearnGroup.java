@@ -32,11 +32,18 @@ public class LearnGroup {
     /**
      * Метод, добавляющий студента в список студентов. Если у студента не указан номер группы - устанавливается номер текущей группы.
      */
-    public void addStudentList (Student student) {
+    public void add (Student student) {
         studentList.add(student);
         if (student.getIdGroup() != id) {
             student.setIdGroup(id);
         }
+    }
+
+    /**
+     * Метод, удаляющий студента из группы.
+     */
+    public void remove(Student student) {
+        studentList.remove(student);
     }
 
     /**
@@ -50,11 +57,13 @@ public class LearnGroup {
      * Просмотр состава группы.
      */
     public void showGroup() {
-        System.out.println("Group" + id);
+        System.out.println("Group " + id);
         System.out.println("Students:");
-        for (Student student: studentList) {
-            System.out.printf("%s %s\n", student.getName(), student.getBirthday());
-        }
+        if (!studentList.isEmpty()){
+            for (Student student: studentList) {
+                System.out.printf("%s %s\n", student.getName(), student.getBirthday());
+             }
+        } else System.out.printf("Группа %d пуста.\n", id);
     }
 }
 
