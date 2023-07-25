@@ -1,9 +1,10 @@
 package homework;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
-public class LearnGroup {
+public class LearnGroup implements Iterable <Student> {
     /**
      * id - Номер группы
      */
@@ -65,6 +66,24 @@ public class LearnGroup {
              }
         } else System.out.printf("Группа %d пуста.\n", id);
     }
+
+    private int index;
+    @Override
+    public Iterator<Student> iterator() {
+        Iterator<Student> it = new Iterator<Student>() {
+            @Override
+            public boolean hasNext() {
+                return index < studentList.size();
+            }
+
+            @Override
+            public Student next() {
+                return studentList.get(index++);
+            }
+        };
+        return it;
+    }
+
 }
 
 
