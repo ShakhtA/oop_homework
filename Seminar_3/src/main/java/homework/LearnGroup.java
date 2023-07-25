@@ -67,7 +67,13 @@ public class LearnGroup implements Iterable <Student> {
         } else System.out.printf("Группа %d пуста.\n", id);
     }
 
+
     private int index;
+
+    /**
+     * Реализация интерфейса Iterable
+     * @return
+     */
     @Override
     public Iterator<Student> iterator() {
         Iterator<Student> it = new Iterator<Student>() {

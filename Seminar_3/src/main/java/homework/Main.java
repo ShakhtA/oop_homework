@@ -44,8 +44,24 @@ public class Main {
         Stream stream1 = new Stream("Mathematika");
         stream1.add(group1);
         stream1.add(group2);
-        stream1.add(group3);
 
+        Stream stream2 = new Stream("Language");
+        stream2.add(group3);
+
+        List<Stream> streamList = new ArrayList<>();
+        streamList.add(stream1);
+        streamList.add(stream2);
+        for (Stream stream:streamList) {
+            System.out.println(stream.getLearnGroupList().size());
+        }
+        System.out.println("============");
+        Comparator streamComparator = new StreamComporator();
+
+        Collections.sort(streamList, streamComparator);
+        for (Stream stream:streamList) {
+            System.out.println(stream.getLearnGroupList().size());
+        }
+        System.out.println("============");
 
     }
 }
